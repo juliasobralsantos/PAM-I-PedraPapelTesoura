@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PedraPapelTesoura.Views.PedraPapelTesouraView"
+             Title="PedraPapelTesouraView">
+    <VerticalStackLayout
+        HorizontalOptions="Center">
+
+        <Label
+            Margin="10,25,0,0"
+            Text="Pedra, Papel ou Tesoura?"
+            FontSize="Large" />
+
+        <Label
+            Margin="10,25,0,0"
+            Text="Escolha"
+            FontSize="Medium" />
+        
+        <Picker
+            x:Name="ChoicePicker"
+            SelectedItem="{Binding Escolha}"
+            Margin="10">
+            <Picker.Items>
+                <x:String>Pedra</x:String>
+                <x:String>Papel</x:String>
+                <x:String>Tesoura</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Button
+            x:Name="PlayBtn"
+            Text="Jogar"
+            HorizontalOptions="Fill" 
+            Command="{Binding JogarCommand}"
+            BackgroundColor="Black"
+            Margin="0,15,0,0"/>
+
+        <Label Text="{Binding Resultado}"
+            FontSize="Large"                   
+            x:Name="ChoiceResult" />
+
+
+    </VerticalStackLayout>
+</ContentPage>
